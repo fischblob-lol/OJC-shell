@@ -6,19 +6,17 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include <signal.h>
+#include <errno.h>
 
 int last_status = 0;
 
 void handle_sigint(int sig) {
   (void)sig;
   last_status = 130;
-  printf("\n");
+  write(STDOUT_FILENO, "\n", 1);
   rl_on_new_line();
   rl_replace_line("", 0);
-  rl_cleanup_after_signal();
-  rl_free_line_state();
-  // rl_redisplay();
-  rl_done = 1;
+  rl_redisplay();
 }
 
 #define RED     "\033[31m"
@@ -62,7 +60,13 @@ void expand_vars(char *input, char *output, int size) {
 }
 
 int main(void) {
-  signal(SIGINT, handle_sigint);
+  struct sigaction sa;
+  sa.sa_handler = handle_sigint;
+  sigemptyset(&sa.sa_mask);
+  sa.sa_flags = 0;
+  sigaction(SIGINT, &sa, NULL);
+
+  // signal(SIGINT, handle_sigint);
   extern int rl_done;
     char *input;
     char *args[64];
@@ -89,14 +93,18 @@ int main(void) {
         input = readline(prompt);
 
         if (!input) {
-          printf("just use 'exit' to OJC shell!\n");
+          /*if (errno == EINTR) {
+            printf("\n");
+            continue;
+          }*/
+          printf("just use 'exit' to leave OJC-sh!\n");
           continue;
         } 
 
-        if (!input || (*input == '\0' && last_status == 130)) {
+        /*if (!input || (*input == '\0' && last_status == 130)) {
           if (input) free(input);
           continue;
-        }
+        }*/
           
         if (*input) add_history(input);
 
