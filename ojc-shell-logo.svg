@@ -1,0 +1,59 @@
+<svg viewBox="0 0 680 180" width="680" height="180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="termglow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#080d12"/>
+    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;family=Syncopate:wght@700&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Terminal window -->
+  <rect width="680" height="180" rx="10" fill="url(#termglow)"/>
+  <!-- Top bar -->
+  <rect x="0" y="0" width="680" height="34" rx="10" fill="#161b22"/>
+  <rect x="0" y="24" width="680" height="10" fill="#161b22"/>
+  <!-- Traffic lights -->
+  <circle cx="22" cy="17" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="17" r="6" fill="#ffbd2e"/>
+  <circle cx="62" cy="17" r="6" fill="#28c840"/>
+  <!-- Title bar text -->
+  <text x="340" y="22"
+    font-family="'Share Tech Mono', monospace"
+    font-size="11" fill="#8b949e"
+    text-anchor="middle" letter-spacing="1">ojcshell — bash</text>
+
+  <!-- Prompt line -->
+  <text x="30" y="76"
+    font-family="'Share Tech Mono', monospace"
+    font-size="13" fill="#3fb950" letter-spacing="0.5">ojc@ojclicks</text>
+  <text x="136" y="76"
+    font-family="'Share Tech Mono', monospace"
+    font-size="13" fill="#8b949e">:</text>
+  <text x="145" y="76"
+    font-family="'Share Tech Mono', monospace"
+    font-size="13" fill="#79c0ff" letter-spacing="0.5">~</text>
+  <text x="160" y="76"
+    font-family="'Share Tech Mono', monospace"
+    font-size="13" fill="#8b949e" letter-spacing="0.5">$  exec ojclicks-os</text>
+
+  <!-- Main logo text -->
+  <text x="30" y="128"
+    font-family="Syncopate, 'Helvetica Neue', sans-serif"
+    font-size="52" font-weight="700"
+    fill="#e6edf3" letter-spacing="-1.5">OJC</text>
+
+  <text x="156" y="128"
+    font-family="Syncopate, 'Helvetica Neue', sans-serif"
+    font-size="52" font-weight="700"
+    fill="#3fb950" letter-spacing="-1.5">shell</text>
+
+  <!-- Cursor -->
+  <rect x="381" y="84" width="11" height="44" fill="#3fb950" opacity="1"/>
+
+  <!-- Tagline -->
+  <text x="30" y="160"
+    font-family="'Share Tech Mono', monospace"
+    font-size="10" fill="#30363d" letter-spacing="3">// gateway to ojclicks os</text>
+</svg>
