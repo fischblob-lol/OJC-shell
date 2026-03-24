@@ -35,6 +35,23 @@ Knowledge should not be hidden behind binaries or paywalls... (as u see the code
 
 ---
 
+## HOWTO (manually)...
+if you wanna to make a changes you just need to copy code to your trem 
+
+`git clone https://github.com/gragero/OJC-shell.git`
+
+whenever you end just make this comand
+
+`gcc -o ojcsh main.c -lreadline`
+
+and congratulations... you are a programmer now
+open it with
+
+`./ojcsh`
+
+just it...
+---
+
 ## Why this matters
 
 Most developers use shells.
