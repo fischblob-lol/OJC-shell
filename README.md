@@ -73,6 +73,14 @@ It is not production-ready — and that’s intentional.(cuz bash better than it
 It is raw, evolving, and transparent.
 
 ---
+## known issues
+* still working in the pipes
+* still working in the quotes
+* still working in sleep proccess
+* still working in the shell at all.
+
+
+---
 
 ## OJclicks OS Vision
 
