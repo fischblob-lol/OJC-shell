@@ -1,11 +1,10 @@
 # OJC-shell
 ![OJC Logo](ojc-shell-logo.svg)
 ## ojcsh... in A.U.R BTW
-**OJC-shell** is a lightweight, minimal, and extensible Unix-like shell written in pure C - designed as the first building block of the **OJclicks OS** vision.
+**OJC-shell** is a lightweight, minimal, and extensible Unix-like shell written in pure C - designed as the first building block of the **OJclicks OS** vision... (still far but working.)
 
-This project is not just another shell.
-It is a deliberate step toward understanding how systems actually work — from process execution and memory handling to user interaction at the lowest level.
-
+This project is **yeap...** another shell bash-like and yeap it's still based on linux... 
+And another **yeap...** it's a learning shell project... to know how ur shell runnig (bash, zsh, fish, etc...).
 ---
 
 ## Philosophy
@@ -18,11 +17,11 @@ No unnecessary layers. Every line of code serves a purpose.
 
 ### 2. Learning by building
 
-This shell exists as a hands-on exploration of operating system fundamentals.
+This shell exists as a hands-on exploration of how the procces runnig or actually(how the shell can take from u a command and run it.)
 
 ### 3. Open source as a movement
 
-Knowledge should not be hidden behind binaries or paywalls.
+Knowledge should not be hidden behind binaries or paywalls... (as u see the code... i don't understand my code.)
 
 ---
 
@@ -31,7 +30,7 @@ Knowledge should not be hidden behind binaries or paywalls.
 * Basic command parsing and execution
 * Process handling using low-level system calls
 * Minimal dependencies (pure C, close to the metal)
-* Designed to evolve alongside **OJclicks OS**
+* Designed to evolve alongside **OJclicks OS** (again... still far).
 
 ---
 
@@ -42,7 +41,7 @@ Few understand how they actually work.
 
 **OJC-shell** is an attempt to close that gap.
 
-It is not production-ready — and that’s intentional.
+It is not production-ready — and that’s intentional.(cuz bash better than it)... i'm the developer and i say it.
 It is raw, evolving, and transparent.
 
 ---
@@ -53,7 +52,8 @@ OJC-shell is the entry point to a larger ambition: building a full operating sys
 
 Not as a copy.
 Not as a tutorial clone.
-But as a personal, experimental, and open system.
+But as a personal, experimental, and open system. (egyptian BTW).
+And not f*cking ai use or based or even inspired.
 
 ---
 
@@ -61,13 +61,14 @@ But as a personal, experimental, and open system.
 
 Contributions are welcome — but more importantly, curiosity is required.
 
-If you:
+If u:
 
 * Want to understand systems on a deeper level
 * Enjoy working close to the hardware
 * Believe open source is about sharing knowledge, not just code
 
-Then you're in the right place.
+Then u're in the right place.
+Or u can go to ur projects... to make ur money.
 
 ---
 
@@ -77,4 +78,6 @@ This project is a journey, not a finished product.
 
 If it breaks, fix it.
 If it’s unclear, improve it.
-If you learn something, share it.
+If you learn something, share it cuz i wanna learn it...
+
+thank u cuz u just wasted some minutes from ur time.
