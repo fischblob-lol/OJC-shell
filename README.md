@@ -4,6 +4,7 @@
 **OJC-shell** is a lightweight, minimal, and extensible Unix-like shell written in pure C - designed as the first building block of the **OJclicks OS** vision... (still far but working.)
 
 This project is **yeap...** another shell bash-like and yeap it's still based on linux... 
+---
 And another **yeap...** it's a learning shell project... to know how ur shell runnig (bash, zsh, fish, etc...).
 ---
 
