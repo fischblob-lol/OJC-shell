@@ -1,7 +1,7 @@
 # OJC-shell
 ![OJC Logo](ojc-shell-logo.svg)
 ## ojcsh... in A.U.R BTW
-**OJC-shell** is a lightweight, minimal, and extensible Unix-like shell written in pure C — designed as the first building block of the **OJclicks OS** vision.
+**OJC-shell** is a lightweight, minimal, and extensible Unix-like shell written in pure C - designed as the first building block of the **OJclicks OS** vision.
 
 This project is not just another shell.
 It is a deliberate step toward understanding how systems actually work — from process execution and memory handling to user interaction at the lowest level.
