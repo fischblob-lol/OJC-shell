@@ -58,7 +58,7 @@
 
   <!-- Cursor -->
   <!-- <rect x="381" y="84" width="11" height="44" fill="#3fb950" opacity="1"/> -->
-  <rect class="cursor" x="180" y="84" width="11" height="44" fill="#3fb950"/>
+  <rect class="cursor" x="300" y="84" width="11" height="44" fill="#3fb950"/>
 
   <!-- Tagline -->
   <text x="30" y="160"
