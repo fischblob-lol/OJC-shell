@@ -51,7 +51,7 @@
     font-size="52" font-weight="700"
     fill="#e6edf3" letter-spacing="-1.5">OJC</text>
 
-  <text x="100" y="128"
+  <text x="130" y="128"
     font-family="Syncopate, 'Helvetica Neue', sans-serif"
     font-size="52" font-weight="700"
     fill="#3fb950" letter-spacing="-1.5">shell</text>
