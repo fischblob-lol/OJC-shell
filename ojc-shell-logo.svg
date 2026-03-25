@@ -5,15 +5,6 @@
       <stop offset="100%" stop-color="#080d12"/>
     </linearGradient>
     <style>
-      .cursor {
-        animation: blink 1s steps(2, start) infinite;
-      }
-
-      @keyframes blink {
-      to {
-      opacity: 0;
-      }
-    }
       @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;family=Syncopate:wght@700&amp;display=swap');
     </style>
   </defs>
@@ -60,6 +51,7 @@
 
   <!-- Cursor -->
   <rect x="381" y="84" width="11" height="44" fill="#3fb950" opacity="1"/>
+  <rect class="cursor" x="381" y="84" width="11" height="44" fill="#3fb950"/>
 
   <!-- Tagline -->
   <text x="30" y="160"
