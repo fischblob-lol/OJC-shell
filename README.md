@@ -44,7 +44,7 @@ and confirm your adding or editing to the source code... (better not).
 
 whenever you end just make this comand
 
-```gcc -o ojcsh main.c -lreadline```
+``` bash $ gcc -o ojcsh main.c -lreadline```
 
 and congratulations... you are a programmer now
 open it with
