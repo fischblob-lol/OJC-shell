@@ -12,6 +12,7 @@
 #include <time.h>
 #include <sys/ioctl.h>
 
+char histfile[1024];
 int last_status = 0;
 char elapsed_str[32] = "";
 
@@ -118,6 +119,27 @@ void run_redirect(char **args, char *file, int append) {
   }
 }
 
+// snprintf(histfile, sizeof(histfile), "%s/.ojchis", getenv("HOME"));
+// read_history(histfile);
+void save_history(void) {
+  write_history(histfile);
+}
+
+void expand_tilde(char *input, char *output, int size) {
+  if (input[0] == '~') {
+    char *home = getenv("HOME");
+    snprintf(output, size, "%s%s", home, input + 1);
+  } else {
+      strncpy(output, input, size);
+      output[size - 1] = '\0';
+   }
+}
+
+
+// atexit(save_history);
+
+
+
 int main(void) {
   struct sigaction sa;
   sa.sa_handler = handle_sigint;
@@ -125,9 +147,14 @@ int main(void) {
   sa.sa_flags = 0;
   sigaction(SIGINT, &sa, NULL);
 
+  snprintf(histfile, sizeof(histfile), "%s/.ojchis", getenv("HOME"));
+  read_history(histfile);
+
   extern int rl_done;
     char *input;
     char *args[64];
+
+    atexit(save_history);
 
     while (1) {
           char cwd[1024];
@@ -177,6 +204,7 @@ int main(void) {
 
         if (!input) {
           printf("just use 'exit' to leave OJC-sh!\n");
+          write_history(histfile);
           continue;
         } 
 
@@ -186,11 +214,27 @@ int main(void) {
         expand_vars(input, expanded, sizeof(expanded));
         input[strcspn(input, "\n")] = '\0';
 
+      /*void expand_tilde(char *input, char *output, int size) {
+          if (input[0] == '~') {
+            char *home = getenv("HOME");
+            snprintf(output, size, "%s%s", home, input + 1);
+          } else {
+            strncpy(output, input, size);
+            output[size - 1] = '\0';
+          }
+        }*/
+
         int i = 0;
         args[i] = strtok(expanded, " ");
         while (args[i] != NULL) {
             i++;
             args[i] = strtok(NULL, " ");
+        }
+
+        for (int k = 0; args[k] != NULL; k++) {
+          char temp[1024];
+          expand_tilde(args[k], temp, sizeof(temp));
+          strcpy(args[k], temp);
         }
 
         if (args[0] == NULL) {
@@ -323,6 +367,18 @@ int main(void) {
             continue;
         }
 
+        if (strcmp(args[0], "his") == 0) { 
+          HIST_ENTRY **hist = history_list();
+          if (hist) {
+            for (int h = 0; hist[h]; h++) {
+              printf("%d %s\n", h + 1, hist[h]->line);
+            }
+          }
+          last_status = 0;
+          free(input);
+          continue;
+        }
+
         struct timespec start, end; 
         clock_gettime(CLOCK_MONOTONIC, &start);
 
@@ -347,5 +403,6 @@ int main(void) {
         }
         free(input);
     }
+    write_history(histfile);
     return 0;
 }
