@@ -38,26 +38,36 @@ Knowledge should not be hidden behind binaries or paywalls... (as u see the code
 ## HOWTO (manually)...
 if you wanna to make a changes you just need to copy code to your trem 
 
-```git clone https://github.com/gragero/OJC-shell.git```
+``` bash 
+$ git clone https://github.com/gragero/OJC-shell.git
+```
 
 and confirm your adding or editing to the source code... (better not).
 
 whenever you end just make this comand
 
-``` bash $ gcc -o ojcsh main.c -lreadline```
+``` bash
+$ gcc -o ojcsh main.c -lreadline
+```
 
 and congratulations... you are a programmer now
 open it with
 
-```./ojcsh```
+``` bash
+$ ./ojcsh
+```
 
 if u wanna make it global... do this.
 
-```sudo cp path/to/ojcsh /usr/bin/```
+``` bash 
+$ sudo cp path/to/ojcsh /usr/bin/
+```
 
 then run it with...
 
-```ojcsh```
+``` bash
+$ ojcsh
+```
 
 just it...
 ---
