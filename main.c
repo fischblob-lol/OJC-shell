@@ -135,79 +135,6 @@ void expand_tilde(char *input, char *output, int size) {
    }
 }
 
-/*int parse_input(char *input, char **args) {
-  int i = 0;
-  char *p = input;
-
-  while (*p) {
-    while (*p == ' ') p++; 
-    if (*p == '\0') break;
-
-    if (*p == '"') {
-      p++;
-      args[i++] = p;
-
-      while (*p && *p != '"') p++; 
-        if (*p) {
-          *p = '\0';
-          p++;
-        }
-      } else {
-        args[i++] = p;
-        while (*p && *p != ' ') p++;
-        if (*p) {
-          *p = '\0';
-          p++;
-        }
-      }
-    }
-    args[i] = NULL;
-    return i;
-  }*/
-
-/*int parse_input(char *input, char **args) {
-  int i = 0;
-  char *p = input;
-
-  while (*p) {
-    while (*p == ' ')
-      p++;
-    if(*p == '\0')
-      break;
-    if(*p == '"') {
-      p++;
-      args[i++] = p;
-
-      while (*p && *p != '"')
-        p++;
-      if (*p) {
-        *p = '\0';
-        p++;
-      }
-    }
-    else if (*p == '\'') {
-      p++;
-      args[i++] =p;
-
-      while (*p && *p != '\'')
-        p++;
-        if (*p) {
-          *p = '\0';
-          p++;
-        }
-    } else {
-      args[i++] = p;
-      while (*p && *p != ' ') p++;
-      if (*p) {
-        *p = '\0';
-        p++;
-      }
-    }
-  }
-  args[i] = NULL;
-  return i;
-}*/
-
 static char _pool[8192];
 
 int parse_input(char *input, char **args) {
@@ -262,42 +189,6 @@ int parse_input(char *input, char **args) {
   args[i] = NULL;
   return i;
 }
-//       *dst = '\0';
-//
-//       if (*p == '"')
-//         p++;
-//     }
-//     else if (*p == '\'') {
-//       p++;
-//       args[i++] = p;
-//       while (*p && *p != '\'')
-//         p++;
-//
-//       if (*p) {
-//         *p = '\0';
-//         p++;
-//       }
-//     }
-//     else {
-//       char *start = p;
-//       char *dst = p;
-//       args[i++] = p;
-//       // char *dst = p;
-//       while (*p && *p != ' ') {
-//         if (*p == '\\' && *(p + 1)) {
-//           p++;
-//         }
-//         *dst++ = *p++;
-//       }
-//       *dst = '\0';
-//       if (*p) 
-//         p++;
-//     }
-//   }
-//   args[i] = NULL;
-//   return i;
-// }
-
 
 // atexit(save_history);
 
@@ -375,22 +266,6 @@ int main(void) {
         expand_vars(input, expanded, sizeof(expanded));
         input[strcspn(input, "\n")] = '\0';
 
-      /*void expand_tilde(char *input, char *output, int size) {
-          if (input[0] == '~') {
-            char *home = getenv("HOME");
-            snprintf(output, size, "%s%s", home, input + 1);
-          } else {
-            strncpy(output, input, size);
-            output[size - 1] = '\0';
-          }
-        }*/
-
-        /*int i = 0;
-        args[i] = strtok(expanded, " ");
-        while (args[i] != NULL) {
-            i++;
-            args[i] = strtok(NULL, " ");
-        }*/
         parse_input(expanded, args);
 
         for (int k = 0; args[k] != NULL; k++) {
