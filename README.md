@@ -130,4 +130,4 @@ thank u cuz u just wasted some minutes from ur time.
 ## Author
 **AboHgegA**
 2026
-## BTW i am (Egyptian) so sorry if my english not (cuz it is at all).
+## BTW i am (Egyptian) so sorry if my english not good (cuz it is at all).
