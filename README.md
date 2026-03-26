@@ -84,9 +84,8 @@ It is raw, evolving, and transparent.
 
 ---
 ## known issues
-* still working in the pipes
-* still working in the quotes
-* still working in sleep proccess
+* still working in sleep proccess.
+* still working in clean code.
 * still working in the shell at all.
 
 
@@ -131,3 +130,4 @@ thank u cuz u just wasted some minutes from ur time.
 ## Author
 **AboHgegA**
 2026
+## BTW i am (Egyptian) so sorry if my english not (cuz it is at all).
