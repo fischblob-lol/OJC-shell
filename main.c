@@ -359,7 +359,7 @@ int main(void) {
         }
 
         if (strcmp(args[0], "help") == 0) {
-          printf("try this commans...\n'who?'\n'hello'\n'about'\n'ojcshfetch'\n");
+          printf("try this commans...\n'who?'\n'hello'\n'about'\n'ojcshfetch'\n'his'\n");
           last_status = 0;
           free(input);
           continue;
