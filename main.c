@@ -135,10 +135,171 @@ void expand_tilde(char *input, char *output, int size) {
    }
 }
 
+/*int parse_input(char *input, char **args) {
+  int i = 0;
+  char *p = input;
+
+  while (*p) {
+    while (*p == ' ') p++; 
+    if (*p == '\0') break;
+
+    if (*p == '"') {
+      p++;
+      args[i++] = p;
+
+      while (*p && *p != '"') p++; 
+        if (*p) {
+          *p = '\0';
+          p++;
+        }
+      } else {
+        args[i++] = p;
+        while (*p && *p != ' ') p++;
+        if (*p) {
+          *p = '\0';
+          p++;
+        }
+      }
+    }
+    args[i] = NULL;
+    return i;
+  }*/
+
+/*int parse_input(char *input, char **args) {
+  int i = 0;
+  char *p = input;
+
+  while (*p) {
+    while (*p == ' ')
+      p++;
+    if(*p == '\0')
+      break;
+    if(*p == '"') {
+      p++;
+      args[i++] = p;
+
+      while (*p && *p != '"')
+        p++;
+      if (*p) {
+        *p = '\0';
+        p++;
+      }
+    }
+    else if (*p == '\'') {
+      p++;
+      args[i++] =p;
+
+      while (*p && *p != '\'')
+        p++;
+        if (*p) {
+          *p = '\0';
+          p++;
+        }
+    } else {
+      args[i++] = p;
+      while (*p && *p != ' ') p++;
+      if (*p) {
+        *p = '\0';
+        p++;
+      }
+    }
+  }
+  args[i] = NULL;
+  return i;
+}*/
+
+static char _pool[8192];
+
+int parse_input(char *input, char **args) {
+  int i = 0;
+  int pool = 0;
+  char *p = input;
+
+  while (*p) {
+    while (*p == ' ' || *p == '\t')
+      p++;
+    if (!*p)
+      break;
+
+      args[i++] = _pool + pool;
+
+      // char *dst = p;
+      while (*p && *p != ' ' && *p != '\t') {
+        if (*p == '\'') {
+          p++;
+          while (*p && *p != '\'')
+            _pool[pool++] = *p++;
+          if (*p == '\'')
+            p++;
+        }
+        else if (*p == '"') {
+          p++;
+          while (*p && *p != '"') {
+            if (*p == '\\') {
+              char nx = *(p + 1);
+              if (nx == '"' ||
+                  nx == '\\' ||
+                  nx == '$' ||
+                  nx == '`' ||
+                  nx == '\n') {
+                p++;
+              }
+            }
+            _pool[pool++] = *p++;
+          }
+          if (*p == '"')
+            p++;
+        } else if (*p == '\\') {
+          p++;
+          if (*p) _pool[pool++] = *p++;
+        } else {
+          _pool[pool++] = *p++;
+        }
+      }
+      _pool[pool++] = '\0';
+  }
+
+  args[i] = NULL;
+  return i;
+}
+//       *dst = '\0';
+//
+//       if (*p == '"')
+//         p++;
+//     }
+//     else if (*p == '\'') {
+//       p++;
+//       args[i++] = p;
+//       while (*p && *p != '\'')
+//         p++;
+//
+//       if (*p) {
+//         *p = '\0';
+//         p++;
+//       }
+//     }
+//     else {
+//       char *start = p;
+//       char *dst = p;
+//       args[i++] = p;
+//       // char *dst = p;
+//       while (*p && *p != ' ') {
+//         if (*p == '\\' && *(p + 1)) {
+//           p++;
+//         }
+//         *dst++ = *p++;
+//       }
+//       *dst = '\0';
+//       if (*p) 
+//         p++;
+//     }
+//   }
+//   args[i] = NULL;
+//   return i;
+// }
+
 
 // atexit(save_history);
-
-
 
 int main(void) {
   struct sigaction sa;
@@ -224,12 +385,13 @@ int main(void) {
           }
         }*/
 
-        int i = 0;
+        /*int i = 0;
         args[i] = strtok(expanded, " ");
         while (args[i] != NULL) {
             i++;
             args[i] = strtok(NULL, " ");
-        }
+        }*/
+        parse_input(expanded, args);
 
         for (int k = 0; args[k] != NULL; k++) {
           char temp[1024];
