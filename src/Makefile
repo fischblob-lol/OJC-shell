@@ -2,7 +2,7 @@ CC     = gcc
 CFLAGS = -Wall -Wextra -g
 LIBS   = -lreadline -lm
 
-ojc: main.o parser.o executor.o builtins.o
+ojcsh: main.o parser.o executor.o builtins.o
 	$(CC) $(CFLAGS) -o ojcsh $^ $(LIBS)
 
 %.o: %.c
