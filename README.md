@@ -61,7 +61,7 @@ $ ./ojcsh
 if u wanna make it global... do this.
 
 ``` bash 
-$ sudo cp path/to/ojc /usr/bin/
+$ sudo cp path/to/ojcsh /usr/bin/
 ```
 
 then run it with...
