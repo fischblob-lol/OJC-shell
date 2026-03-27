@@ -55,7 +55,7 @@ and congratulations... you are a programmer now
 open it with
 
 ``` bash
-$ ./ojc
+$ ./ojcsh
 ```
 
 if u wanna make it global... do this.
@@ -67,7 +67,7 @@ $ sudo cp path/to/ojc /usr/bin/
 then run it with...
 
 ``` bash
-$ ojc
+$ ojcsh
 ```
 
 just it...
