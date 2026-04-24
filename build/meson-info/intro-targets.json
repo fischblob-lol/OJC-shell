@@ -1,0 +1,62 @@
+[
+  {
+    "name": "ojcsh",
+    "id": "ojcsh@exe",
+    "type": "executable",
+    "defined_in": "/Users/daniel/OJC-shell/src/meson.build",
+    "filename": [
+      "/Users/daniel/OJC-shell/build/ojcsh"
+    ],
+    "build_by_default": true,
+    "target_sources": [
+      {
+        "language": "c",
+        "machine": "host",
+        "compiler": [
+          "cc"
+        ],
+        "parameters": [
+          "-I/Users/daniel/OJC-shell/build/ojcsh.p",
+          "-I/Users/daniel/OJC-shell/build",
+          "-I/Users/daniel/OJC-shell/src",
+          "-I/opt/homebrew/Cellar/readline/8.3.3/include",
+          "-fdiagnostics-color=always",
+          "-Wall",
+          "-Winvalid-pch",
+          "-Wextra",
+          "-std=c99",
+          "-O0",
+          "-g",
+          "-D_DARWIN_C_SOURCE"
+        ],
+        "sources": [
+          "/Users/daniel/OJC-shell/src/main.c",
+          "/Users/daniel/OJC-shell/src/parser.c",
+          "/Users/daniel/OJC-shell/src/executor.c",
+          "/Users/daniel/OJC-shell/src/builtins.c"
+        ],
+        "generated_sources": [],
+        "unity_sources": []
+      },
+      {
+        "linker": [
+          "cc"
+        ],
+        "parameters": [
+          "-Wl,-dead_strip_dylibs",
+          "-Wl,-headerpad_max_install_names",
+          "-Wl,-rpath,/opt/homebrew/Cellar/readline/8.3.3/lib",
+          "/opt/homebrew/Cellar/readline/8.3.3/lib/libreadline.dylib"
+        ]
+      }
+    ],
+    "extra_files": [],
+    "subproject": null,
+    "dependencies": [
+      "readline"
+    ],
+    "depends": [],
+    "win_subsystem": "console",
+    "installed": false
+  }
+]
