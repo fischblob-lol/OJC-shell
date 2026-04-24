@@ -30,3 +30,6 @@ ninja
 ./ojcsh
 ```
 Wooho, you ran it on mac. how cool.
+# Will this be put in homebrew/MacPorts?
+Honestly, no. I dont see why I would want to ship it to homebrew/MacPorts. but if youd really want me to,
+dm my discord (@tsd___) and ill see what I can do. 
