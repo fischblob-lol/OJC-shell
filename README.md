@@ -5,3 +5,5 @@ via meson
 sure
 # whos going to use this
 maybe me
+# how 2 compile?
+wait
